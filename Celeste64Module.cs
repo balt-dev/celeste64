@@ -32,7 +32,7 @@ namespace Celeste.Mod.Celeste64 {
             string romPath = Settings.SM64RomPath;
             try {
                 var romBytes = File.ReadAllBytes(romPath);
-                //var sm64Context = Sm64Context.InitFromRom(romBytes);
+                var sm64Context = Sm64Context.InitFromRom(romBytes);
             } catch (Exception exc) {
                 // The rom path doesn't exist, couldn't be read, or isn't valid!
                 // We alert the user and return.
