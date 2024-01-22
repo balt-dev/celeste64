@@ -19,6 +19,8 @@ namespace Celeste.Mod.Celeste64 {
                 });
             enabler.Disabled = inGame || !Celeste64Module.initializedRom;
             if (!Celeste64Module.initializedRom) {
+                var item = enabler.AddDescription(menu, "Failed to initialize libSM64.\nCheck that the rom path is valid and restart.");
+                item.Selectable = true;
             }
             menu.Add(enabler);
         }
