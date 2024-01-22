@@ -7,7 +7,7 @@
         <LangVersion>latest</LangVersion>
         <!-- Don't mind me, just doing this so I can work on the mod outside of the Celeste/Mods folder -->
         <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.dll')">..\..</CelestePrefix>
-        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('/home/balt/steamapps/common/Celeste/Celeste.dll')">/home/balt/steamapps/common/Celeste/</CelestePrefix>
+        
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
