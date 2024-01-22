@@ -9,10 +9,9 @@ namespace Celeste.Mod.Celeste64 {
         public string SM64RomPath { get; set; } = "<unset>";
 
         [YamlIgnore]
-        [SettingIgnore]
         public bool EnableSM64 { get; set; } = false;
 
-        public void CreateSomethingEntry(TextMenu menu, bool inGame) {
+        public void CreateEnableSM64Entry(TextMenu menu, bool inGame) {
             var enabler = new 
                 TextMenu.OnOff("Enable SM64 movement", false)
                 .Change(value => {
