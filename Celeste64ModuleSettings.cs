@@ -24,6 +24,7 @@ namespace Celeste.Mod.Celeste64 {
                 if (!Celeste64Module.initializedRom) {
                     var message = new TextMenuExt.SubHeaderExt("Failed to initialize libSM64.\nCheck that the rom path is valid and restart.") {
                         TextColor = Color.OrangeRed,
+                        HeightExtra = 0f
                     };
                     menu.Add(message);
                 }
