@@ -13,20 +13,21 @@ namespace Celeste.Mod.Celeste64 {
         public bool EnableSM64 { get; set; } = false;
 
         public void CreateEnableSM64Entry(TextMenu menu, bool inGame) {
-
-            if (!Celeste64Module.initializedRom) {
-                var message = new TextMenuExt.SubHeaderExt("Failed to initialize libSM64.\nCheck that the rom path is valid and restart.") {
-                    TextColor = Color.OrangeRed,
-                };
-                menu.Add(message);
+            if (!inGame) {
+                var enabler = new 
+                    TextMenu.OnOff("Enable SM64 movement", false)
+                    .Change(value => {
+                        EnableSM64 = Celeste64Module.initializedRom && value;
+                    });
+                enabler.Disabled = !Celeste64Module.initializedRom;
+                menu.Add(enabler);
+                if (!Celeste64Module.initializedRom) {
+                    var message = new TextMenuExt.SubHeaderExt("Failed to initialize libSM64.\nCheck that the rom path is valid and restart.") {
+                        TextColor = Color.OrangeRed,
+                    };
+                    menu.Add(message);
+                }
             }
-            var enabler = new 
-                TextMenu.OnOff("Enable SM64 movement", false)
-                .Change(value => {
-                    EnableSM64 = Celeste64Module.initializedRom && value;
-                });
-            enabler.Disabled = inGame || !Celeste64Module.initializedRom;
-            menu.Add(enabler);
         }
     }
 }
