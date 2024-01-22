@@ -24,6 +24,10 @@ namespace Celeste.Mod.Celeste64 {
         }
 
         public override void Load() {
+            // TODO: apply any hooks that should always be active
+        }
+
+        public override void Initialize() {
             // Read the SM64 rom
             string romPath = Settings.SM64RomPath;
             try {
@@ -36,10 +40,6 @@ namespace Celeste.Mod.Celeste64 {
                 return;
             }
             initializedRom = true;
-            // TODO: apply any hooks that should always be active
-        }
-
-        public override void Initialize() {
         }
 
         public override void Unload() {
