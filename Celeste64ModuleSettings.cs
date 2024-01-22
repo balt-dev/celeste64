@@ -15,8 +15,8 @@ namespace Celeste.Mod.Celeste64 {
         public void CreateEnableSM64Entry(TextMenu menu, bool inGame) {
 
             if (!Celeste64Module.initializedRom) {
-                var message = new TextMenuExt.EaseInSubHeaderExt("Failed to initialize libSM64.\nCheck that the rom path is valid and restart.", true, menu) {
-                    TextColor = Color.Red,
+                var message = new TextMenuExt.SubHeaderExt("Failed to initialize libSM64.\nCheck that the rom path is valid and restart.") {
+                    TextColor = Color.OrangeRed,
                 };
                 menu.Add(message);
             }
