@@ -1,0 +1,1 @@
+This is where LibSm64Sharp.dll should be put.
