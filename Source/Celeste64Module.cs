@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using IL.System.Runtime.CompilerServices;
 using libsm64sharp;
 using Microsoft.Xna.Framework;
 
@@ -36,6 +37,7 @@ namespace Celeste.Mod.Celeste64 {
                 // The rom path doesn't exist, couldn't be read, or isn't valid!
                 // We alert the user and return.
                 Logger.Log(LogLevel.Error, nameof(Celeste64Module), $"Failed to read SM64 rom! {exc.Message}");
+                return;
             }
             initializedRom = true;
         }
