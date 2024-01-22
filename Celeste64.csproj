@@ -6,8 +6,8 @@
         <RootNamespace>Celeste.Mod.Celeste64</RootNamespace>
         <LangVersion>latest</LangVersion>
         <!-- Don't mind me, just doing this so I can work on the mod outside of the Celeste/Mods folder -->
-        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('/home/balt/steamapps/common/Celeste/Celeste.dll')">/home/balt/steamapps/common/Celeste/</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('..\..\Celeste.dll')">..\..</CelestePrefix>
+        <CelestePrefix Condition="'$(CelestePrefix)' == '' And Exists('/home/balt/steamapps/common/Celeste/Celeste.dll')">/home/balt/steamapps/common/Celeste/</CelestePrefix>
         <CelestePrefix Condition="'$(CelestePrefix)' == ''">lib-stripped</CelestePrefix>
     </PropertyGroup>
 
@@ -21,6 +21,7 @@
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1" PrivateAssets="all" />
         <PackageReference Include="MonoMod.RuntimeDetour" Version="25.0.2" PrivateAssets="all" ExcludeAssets="runtime" />
         <PackageReference Include="MonoMod.Patcher" Version="25.0.0-prerelease.2" />
+        <PackageReference Include="libsm64-sharp" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -36,8 +37,7 @@
         <Reference Include="$(CelestePrefix)/YamlDotNet.dll">
             <Private>false</Private>
         </Reference>
-        <Reference Include="LibSm64Sharp, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>bin\LibSm64Sharp.dll</HintPath>
+        <Reference Include="lib/LibSm64Sharp.dll">
             <Private>false</Private>
         </Reference>
     </ItemGroup>
@@ -47,10 +47,6 @@
         <Copy SourceFiles="lib\LibSm64Sharp.dll" DestinationFolder="..\bin" />
         <Copy SourceFiles="$(OutputPath)\$(AssemblyName).pdb" DestinationFolder="..\bin" />
     </Target>
-
-    <ItemGroup>
-        <Content Include="lib/LibSm64Sharp.dll" />
-    </ItemGroup>
     
     <PropertyGroup>
         <PathMap>$(MSBuildProjectDirectory)=Celeste64/</PathMap>
