@@ -37,7 +37,7 @@
             <Private>false</Private>
         </Reference>
         <Reference Include="LibSm64Sharp, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null">
-            <HintPath>lib\LibSm64Sharp.dll</HintPath>
+            <HintPath>bin\LibSm64Sharp.dll</HintPath>
             <Private>false</Private>
         </Reference>
     </ItemGroup>
