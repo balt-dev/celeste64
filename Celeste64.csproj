@@ -24,8 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="Celeste">
-            <HintPath>$(CelestePrefix)/Celeste.dll</HintPath>
+        <Reference Include="$(CelestePrefix)/Celeste.dll">
             <Private>false</Private>
         </Reference>
         <Reference Include="$(CelestePrefix)/MMHOOK_Celeste.dll">
